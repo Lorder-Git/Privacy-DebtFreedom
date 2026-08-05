@@ -138,11 +138,6 @@ con blocco schermo attivo, questa memoria è cifrata dal sistema.
 Ti consigliamo di tenere attivo il blocco schermo del telefono e di
 mantenere aggiornato il sistema operativo.
 
-> **DA ATTIVARE CON LA CIFRATURA**
-> Il database dell'app è cifrato con SQLCipher (AES-256). La chiave è
-> conservata nel keystore hardware del dispositivo e non lascia mai il
-> telefono.
-
 **Fai i tuoi backup.** Poiché non conserviamo copie, se perdi o formatti il
 telefono i dati non sono recuperabili. Usa periodicamente la funzione di
 esportazione.
