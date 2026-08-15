@@ -25,7 +25,7 @@ internet per usare l'app.
 
 Hubert Montero / Senior Developer / Debt Freedom App
 
-Email: hubertmontero8514@gmail.com
+Email: hbredessoc2018@gmail.com
 
 Per qualsiasi questione relativa ai tuoi dati puoi scrivere all'indirizzo
 qui sopra.
@@ -213,6 +213,6 @@ al documento indica l'ultimo aggiornamento.
 
 ## 11. Contatti
 
-hubertmontero8514@gmail.com
+hbredessoc2018@gmail.com
 
 Rispondiamo entro 30 giorni, come previsto dall'art. 12 GDPR.
