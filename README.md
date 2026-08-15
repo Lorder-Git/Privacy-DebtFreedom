@@ -108,6 +108,42 @@ I dati che inserisci non lasciano il dispositivo.
 
 ---
 
+## Distribuzione al di fuori di Google Play
+
+Estingui è verificata e registrata su Google Play Console: puoi controllare
+lo stato pubblico dell'app all'indirizzo [LINK ALLA TUA APP SU PLAY, anche
+se in test chiuso — se Play non permette un link pubblico prima della
+pubblicazione, sostituisci con una dichiarazione testuale tipo "l'app è
+stata sottoposta e superata la revisione di sicurezza di Google Play"].
+
+Se hai scaricato l'app dal nostro sito invece che da Google Play, stai
+installando lo stesso identico pacchetto, verificato con lo stesso
+processo. La differenza riguarda solo dove l'hai scaricata, non cosa fa
+l'app o come tratta i tuoi dati.
+
+## Il pagamento dell'abbonamento Premium
+
+Il calcolo dei tuoi debiti resta interamente sul tuo dispositivo, come
+descritto in questa informativa. L'acquisto dell'abbonamento Premium è
+un'eccezione dichiarata: quando tocchi "Vai al pagamento", l'app apre il
+tuo browser su una pagina di PayPal, esterna alla nostra app.
+
+Su quella pagina fornisci i dati di pagamento direttamente a PayPal, non a
+noi: **non riceviamo né vediamo mai i dati della tua carta o del tuo conto
+PayPal**. PayPal tratta quei dati secondo la propria informativa privacy,
+consultabile su paypal.com.
+
+Dopo il pagamento riceverai via email una chiave di attivazione. Quella
+chiave, una volta incollata nell'app, viene verificata **esclusivamente
+sul tuo dispositivo**: la verifica non richiede una connessione a
+internet e non invia la chiave da nessuna parte.
+
+L'unico dato che ci serve per generare la chiave è l'indirizzo email a cui
+la invii, che tratteremo solo per l'invio della chiave stessa e non per
+altri scopi.
+
+---
+
 ## 6. I tuoi diritti
 
 Il GDPR ti riconosce il diritto di accedere ai tuoi dati, correggerli,
