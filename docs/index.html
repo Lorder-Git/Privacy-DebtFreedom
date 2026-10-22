@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Informativa sulla privacy — Estingui: prestiti e mutui</title>
-<meta name="description" content="Informativa sulla privacy dell'app Estingui: prestiti e mutui. I dati restano sul dispositivo dell'utente.">
+<meta name="description" content="Informativa sulla privacy dell'app Estingui: prestiti e mutui. I dati sui debiti restano sul dispositivo dell'utente; Premium, attivazione e aggiornamenti spiegati per esteso.">
 <style>
   :root { --verde:#0B6E4F; --verde-chiaro:#f0f7f3; --bordo:#dfe9e4; --testo:#1c1c1c; --tenue:#6b7a73; }
   * { box-sizing:border-box; }
@@ -44,22 +44,28 @@
   </div>
   <h1>Informativa sulla privacy</h1>
   <p class="meta">Estingui: prestiti e mutui · <code>com.debtfreedom.app</code><br>
-  Versione 2.0.0 — ultimo aggiornamento: 15/09/2026</p>
+  Versione 2.1 — ultimo aggiornamento: 22 ottobre 2026</p>
 </header>
 
 <div class="riquadro">
-  <p><strong>In breve.</strong> Estingui funziona interamente sul tuo
-  dispositivo. I dati che inserisci — i tuoi finanziamenti, gli importi, le
-  date — <strong>non vengono inviati a nessun server</strong>, né a noi né a
-  terzi.</p>
-  <p>Non c'è registrazione, non c'è un account, non serve una connessione a
-  internet per usare l'app.</p>
+  <p><strong>In breve.</strong> I dati sui tuoi debiti — finanziamenti,
+  importi, date, pagamenti — <strong>restano solo sul tuo dispositivo</strong>
+  e non vengono inviati a nessun server, né a noi né a terzi. Non c'è un
+  account, non c'è pubblicità, non ci sono strumenti di analisi o
+  tracciamento. I calcoli funzionano anche senza internet.</p>
+  <p>La connessione serve solo per tre cose, spiegate per esteso più sotto:
+  <strong>attivare e rinnovare Premium</strong> (l'app invia la chiave e
+  un'impronta del telefono ricavata con un hash, mai i tuoi dati
+  finanziari),
+  <strong>controllare gli aggiornamenti</strong> dell'app Android e, nella
+  versione web, <strong>tenere aperta la sessione Premium</strong> nel
+  browser. L'acquisto avviene su PayPal.</p>
 </div>
 
 <h2>1. Titolare del trattamento</h2>
 <p>
   Hubert Montero / Senior Developer / Estingui: prestiti e mutui<br>
-  Email: <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com </a>
+  Email: <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>
 </p>
 <p>Per qualsiasi questione relativa ai tuoi dati puoi scrivere all'indirizzo
 qui sopra.</p>
@@ -72,6 +78,10 @@ stesso processo.</p>
 <p>La differenza riguarda solo da dove l'hai scaricata, non cosa fa l'app o
 come tratta i tuoi dati: quanto descritto in questa informativa vale allo
 stesso modo, qualunque sia la fonte del download.</p>
+<p>La versione Android scaricata da marketplace-apps.com controlla da sola
+se è disponibile un aggiornamento (vedi il punto 3.6). Estingui esiste anche
+in versione web, che si usa dal browser: dove le due versioni si comportano
+in modo diverso, questa informativa lo indica.</p>
 
 <h2>3. Quali dati tratta l'app</h2>
 
@@ -85,26 +95,124 @@ stesso modo, qualunque sia la fonte del download.</p>
   <li>date di decorrenza e scadenza</li>
   <li>eventuali pagamenti registrati e note</li>
 </ul>
-<p>Sono <strong>dati personali di natura finanziaria</strong>. Vengono
-salvati esclusivamente nella memoria privata dell'app sul tuo dispositivo,
-in un database che solo questa applicazione può leggere.</p>
+<p>Sono <strong>dati personali di natura finanziaria</strong>. Nell'app
+Android vengono salvati esclusivamente in un database nella memoria privata
+dell'app sul tuo dispositivo, che solo questa applicazione può leggere. Nella
+versione web vengono salvati in un database del tuo browser, sul computer o
+sul telefono che stai usando.</p>
 <p><strong>Non vengono trasmessi a nessuno.</strong> Non esiste un server che
 li riceve, non abbiamo modo di leggerli, e non possiamo recuperarli se li
-perdi.</p>
+perdi. Nella versione web, se cancelli i dati di navigazione del sito, li
+cancelli anche dall'app.</p>
 
 <h3>3.2 Preferenze e consensi</h3>
 <p>L'app registra la data in cui hai accettato le condizioni d'uso, quale
 versione del testo hai accettato, e la tua preferenza sul tema chiaro o
-scuro. Anche questi dati restano sul dispositivo.</p>
+scuro. Anche questi dati restano sul dispositivo. Nella versione web
+l'accettazione è ricordata anche da un cookie tecnico (punto 3.5).</p>
 
-<h3>3.3 Cosa l'app NON fa</h3>
+<h3>3.3 Attivazione di Premium sul telefono (app Android)</h3>
+<p>La chiave Premium vale al massimo su <strong>2 telefoni</strong>. Per far
+rispettare questo limite, quando attivi la chiave l'app si collega al nostro
+server delle licenze (<code>licenze.hubertmontero8514.workers.dev</code>,
+un servizio Cloudflare Workers gestito da noi) e invia:</p>
+<ul>
+  <li>la <strong>chiave di licenza</strong>, che al suo interno contiene
+      l'indirizzo email dell'acquirente, il piano e la data di scadenza;</li>
+  <li>un'<strong>impronta del telefono</strong>: un codice ricavato con una
+      funzione di hash (SHA-256) dal nome dell'app e dall'identificativo
+      Android del telefono (ANDROID_ID), poi accorciato.
+      <strong>L'identificativo Android non viene mai inviato in
+      chiaro</strong> e l'impronta è diversa per ogni app, quindi non serve
+      a collegare il tuo uso di app diverse.</li>
+</ul>
+<p>La stessa richiesta viene ripetuta in automatico quando l'attivazione va
+rinnovata, cioè al massimo ogni 30 giorni e solo se il telefono è connesso.
+Il server risponde con un'attivazione firmata che l'app conserva e verifica
+sul telefono, anche senza connessione.</p>
+<p>Il server <strong>non conserva la tua email</strong> e non conserva la
+chiave in chiaro. Conserva soltanto:</p>
+<ul>
+  <li>l'hash SHA-256 della chiave;</li>
+  <li>l'impronta del telefono;</li>
+  <li>il tipo di piano (per esempio se si tratta della prova gratuita);</li>
+  <li>la data di attivazione e quella dell'ultimo rinnovo;</li>
+  <li>se cambi telefono, la data dell'ultima sostituzione automatica (è
+      consentita una sostituzione ogni 30 giorni);</li>
+  <li>se una chiave viene bloccata (per esempio dopo un rimborso o un abuso),
+      l'hash di quella chiave.</li>
+</ul>
+<p>La <strong>prova gratuita</strong> si può attivare una sola volta per
+telefono: per questo il server verifica se la stessa impronta l'ha già
+usata.</p>
+<p>Il pulsante <strong>Disattiva su questo telefono</strong>, nella schermata
+Premium, cancella dal server la riga che lega la chiave a quel telefono e
+libera il posto.</p>
+<p>Leggere l'identificativo Android serve solo a questo, avviene solo quando
+attivi o rinnovi Premium, cioè un servizio che hai chiesto tu, e non è usato
+per pubblicità, statistiche o profilazione.</p>
+
+<h3>3.4 Acquisto, invio della chiave e promozioni</h3>
+<p>L'acquisto di Premium avviene su <strong>PayPal</strong>: l'app apre il tuo
+browser su una pagina di PayPal, esterna alla nostra app. Fornisci i dati di
+pagamento direttamente a PayPal, non a noi: <strong>non riceviamo né vediamo
+mai i dati della tua carta o del tuo conto PayPal</strong>. PayPal tratta
+quei dati come titolare autonomo, secondo la propria
+<a href="https://www.paypal.com/it/legalhub/paypal/privacy-full">informativa
+privacy</a>.</p>
+<p>Dopo il pagamento PayPal invia una notifica al nostro server delle
+licenze, che genera la chiave e te la manda all'indirizzo email del
+pagamento tramite il servizio di invio email <strong>Resend</strong>
+(mittente <code>premium@marketplace-apps.com</code>). Nel nostro server delle
+licenze l'email non viene salvata. Restano invece, come per ogni vendita, i
+dati dell'operazione che PayPal mette a disposizione del venditore nel suo
+conto PayPal (per esempio nome, email, importo e data).</p>
+<p><strong>Promozione «30 giorni gratis».</strong> Se ti iscrivi a una
+promozione dal sito marketplace-apps.com, l'email serve a mandarti la chiave
+di prova (sempre tramite Resend). Nel nostro database ne resta solo un
+<strong>hash calcolato con una chiave segreta</strong>, che serve a impedire
+che la stessa email si iscriva due volte alla stessa promozione. Il modulo è
+protetto da Cloudflare Turnstile, un controllo anti-bot di Cloudflare.</p>
+
+<h3>3.5 Versione web: sessione Premium e cookie</h3>
+<p>Nella versione web la chiave si verifica sul server del marketplace
+(marketplace-apps.com). Se è valida, il server apre una <strong>sessione
+Premium</strong> e la lega al tuo browser con un cookie tecnico
+(<code>httpOnly</code>, non leggibile dagli script della pagina). Per far
+funzionare la sessione il server conserva: l'hash del codice di sessione,
+l'hash della chiave, l'email, il piano e la scadenza ricavati dalla
+chiave.</p>
+<p>Con la stessa chiave possono essere aperte al massimo
+<strong>2 sessioni</strong>: aprendone una terza, la più vecchia viene
+chiusa e cancellata. Per limitare i tentativi di indovinare le chiavi, il
+server tiene in memoria per 10 minuti il numero di tentativi fatti dallo
+stesso indirizzo IP, senza salvarlo in un database.</p>
+<p>La versione web usa solo cookie tecnici: quello della sessione Premium,
+che dura fino alla scadenza della licenza (al massimo 400 giorni per le
+licenze senza scadenza), e quello che ricorda l'accettazione delle
+condizioni d'uso (400 giorni). Non usa cookie di profilazione, di analisi o
+di terze parti.</p>
+
+<h3>3.6 Aggiornamenti dell'app (Android)</h3>
+<p>All'avvio l'app chiede a
+<code>marketplace-apps.com/api/versione/estingui</code> qual è l'ultima
+versione disponibile e, se ce n'è una nuova, scarica il pacchetto di
+installazione da <code>files.marketplace-apps.com</code> (servizio Cloudflare
+R2). Sei tu a confermare l'installazione.</p>
+<p>Queste richieste <strong>non contengono dati personali</strong> né
+identificativi del telefono: come per qualsiasi collegamento a internet, i
+server vedono solo l'indirizzo IP da cui arriva la richiesta.</p>
+
+<h3>3.7 Cosa l'app NON fa</h3>
 <ul>
   <li>non raccoglie dati di utilizzo, statistiche o diagnostica</li>
   <li>non usa strumenti di analisi, tracciamento o pubblicità</li>
+  <li>non chiede di creare un account</li>
   <li>non accede a rubrica, posizione, fotocamera, foto o messaggi</li>
   <li>non si collega ai tuoi conti bancari e non chiede credenziali</li>
-  <li>non identifica il dispositivo né crea profili pubblicitari</li>
-  <li>non richiede il permesso di accesso a internet per funzionare</li>
+  <li>non crea profili pubblicitari; l'impronta del telefono è usata solo
+      per l'attivazione di Premium (punto 3.3)</li>
+  <li>non invia a nessun server i dati sui tuoi debiti</li>
 </ul>
 
 <h2>4. Base giuridica e finalità</h2>
@@ -123,7 +231,41 @@ scuro. Anche questi dati restano sul dispositivo.</p>
     <td>Obbligo legale e legittimo interesse a dimostrare l'informativa
         resa (artt. 6.1.c e 6.1.f)</td>
   </tr>
+  <tr>
+    <td>Generare la chiave Premium e inviartela via email dopo il
+        pagamento</td>
+    <td>Esecuzione del contratto di acquisto (art. 6.1.b)</td>
+  </tr>
+  <tr>
+    <td>Attivare Premium sul telefono, rinnovare l'attivazione e far
+        rispettare il limite di 2 telefoni per chiave; sessione Premium
+        nella versione web (massimo 2 sessioni)</td>
+    <td>Esecuzione del contratto di licenza (art. 6.1.b): il limite fa parte
+        delle condizioni dell'offerta Premium</td>
+  </tr>
+  <tr>
+    <td>Impedire gli abusi: una sola prova gratuita per telefono e per
+        email, una sostituzione automatica del telefono ogni 30 giorni,
+        blocco delle chiavi revocate, limite ai tentativi di verifica</td>
+    <td>Legittimo interesse (art. 6.1.f) a prevenire usi fraudolenti delle
+        licenze. Usiamo solo hash e date, cioè il minimo indispensabile, e si
+        tratta di regole descritte in questa informativa: riteniamo che non prevalgano
+        sui tuoi diritti. Puoi opporti (punto 8)</td>
+  </tr>
+  <tr>
+    <td>Controllare e scaricare gli aggiornamenti dell'app Android</td>
+    <td>Legittimo interesse (art. 6.1.f) a mantenere l'app sicura e
+        corretta; viene trattato solo l'indirizzo IP della richiesta</td>
+  </tr>
+  <tr>
+    <td>Conservare i dati delle vendite</td>
+    <td>Obbligo legale fiscale e contabile (art. 6.1.c)</td>
+  </tr>
 </table>
+<p>Il cookie della sessione web e la lettura dell'identificativo Android
+sono strettamente necessari a fornire il servizio Premium che hai chiesto:
+per questo non ti chiediamo un consenso separato (art. 122 del Codice
+privacy, d.lgs. 196/2003).</p>
 <p>Non trattiamo i tuoi dati per marketing, profilazione o decisioni
 automatizzate.</p>
 
@@ -154,41 +296,112 @@ numero di rate, il nome che hai dato al debito, le note, né alcun
 identificativo tuo o del dispositivo. Descrive il contratto tipo, non la
 persona.</p>
 
-<h3>5.4 Il pagamento dell'abbonamento Premium</h3>
-<p>Il calcolo dei tuoi debiti resta interamente sul tuo dispositivo, come
-descritto in questa informativa. L'acquisto dell'abbonamento Premium è
-un'eccezione dichiarata: quando tocchi "Vai al pagamento", l'app apre il
-tuo browser su una pagina di PayPal, esterna alla nostra app.</p>
-<p>Su quella pagina fornisci i dati di pagamento direttamente a PayPal, non
-a noi: <strong>non riceviamo né vediamo mai i dati della tua carta o del
-tuo conto PayPal</strong>. PayPal tratta quei dati secondo la propria
-informativa privacy, consultabile su paypal.com.</p>
-<p>Dopo il pagamento riceverai via email una chiave di attivazione. Quella
-chiave, una volta incollata nell'app, viene verificata
-<strong>esclusivamente sul tuo dispositivo</strong>: la verifica non
-richiede una connessione a internet e non invia la chiave da nessuna
-parte.</p>
-<p>L'unico dato che ci serve per generare la chiave è l'indirizzo email a
-cui la invii, che tratteremo solo per l'invio della chiave stessa e non per
-altri scopi.</p>
-
 <h2>6. Per quanto tempo restano</h2>
-<p>I dati restano sul tuo dispositivo finché non li cancelli tu, o finché non
-disinstalli l'app. Non essendoci un server, non esiste una copia altrove che
-possa sopravvivere alla cancellazione.</p>
+<table>
+  <tr><th>Dato</th><th>Per quanto tempo</th></tr>
+  <tr>
+    <td>Dati sui debiti, preferenze, consensi, chiave e attivazione salvate
+        nell'app</td>
+    <td>Sul tuo dispositivo, finché non li cancelli o non disinstalli l'app
+        (nella versione web, finché non cancelli i dati del sito dal
+        browser). Non ne esiste una copia altrove.</td>
+  </tr>
+  <tr>
+    <td>Attivazioni Premium sul server (hash della chiave, impronta, piano,
+        date)</td>
+    <td>Finché la licenza è in uso. La riga viene cancellata subito se usi
+        <strong>Disattiva su questo telefono</strong>, e comunque quando il
+        telefono non rinnova l'attivazione per 90 giorni (per esempio dopo la
+        scadenza della licenza o se smetti di usare l'app).</td>
+  </tr>
+  <tr>
+    <td>Attivazioni della prova gratuita (per il controllo «una prova per
+        telefono»)</td>
+    <td>12 mesi dall'attivazione della prova.</td>
+  </tr>
+  <tr>
+    <td>Data dell'ultima sostituzione del telefono</td>
+    <td>60 giorni dall'ultima sostituzione.</td>
+  </tr>
+  <tr>
+    <td>Hash delle chiavi bloccate</td>
+    <td>Finché serve a impedire l'uso della chiave bloccata (solo il codice cifrato della chiave).</td>
+  </tr>
+  <tr>
+    <td>Sessioni Premium della versione web</td>
+    <td>Fino alla scadenza della licenza o finché la sessione non viene
+        chiusa da una più recente; le sessioni scadute vengono cancellate
+        entro 30 giorni.</td>
+  </tr>
+  <tr>
+    <td>Hash dell'email per la promozione «30 giorni gratis»</td>
+    <td>Cancellato 30 giorni dopo la fine della campagna promozionale.</td>
+  </tr>
+  <tr>
+    <td>Dati delle vendite visibili nel conto PayPal del venditore</td>
+    <td>Per il tempo previsto dalla normativa fiscale e contabile.</td>
+  </tr>
+  <tr>
+    <td>Email inviate tramite Resend e registri tecnici dei fornitori (per
+        esempio indirizzi IP nei log dei server)</td>
+    <td>Per brevi periodi tecnici, secondo le politiche di conservazione dei
+        singoli fornitori (punto 7).</td>
+  </tr>
+  <tr>
+    <td>Messaggi che ci scrivi</td>
+    <td>Per il tempo necessario a gestire la tua richiesta.</td>
+  </tr>
+</table>
 
 <h2>7. Destinatari e trasferimenti</h2>
-<p>Nessun destinatario. Nessun trasferimento, né in Italia né all'estero.
-I dati che inserisci non lasciano il dispositivo, se non nei documenti che
-sei tu a generare e condividere, o nell'email che fornisci volontariamente
-a PayPal al momento del pagamento.</p>
+<p>I dati che inserisci sui tuoi debiti non lasciano il dispositivo, se non
+nei documenti che sei tu a generare e condividere. Per Premium, gli
+aggiornamenti e la versione web ci serviamo di questi fornitori, che
+trattano i dati per nostro conto come responsabili del trattamento (art. 28
+GDPR), salvo PayPal, che agisce come titolare autonomo:</p>
+<table>
+  <tr><th>Fornitore</th><th>Cosa fa</th></tr>
+  <tr>
+    <td>Cloudflare (Stati Uniti)</td>
+    <td>Server delle licenze (Workers), database delle attivazioni e della
+        promozione (D1), file degli aggiornamenti (R2), controllo anti-bot
+        (Turnstile)</td>
+  </tr>
+  <tr>
+    <td>Vercel (Stati Uniti)</td>
+    <td>Hosting del sito marketplace-apps.com e dei suoi servizi (verifica
+        della chiave web, controllo versione)</td>
+  </tr>
+  <tr>
+    <td>Supabase</td>
+    <td>Database del marketplace, ospitato nell'Unione europea (Irlanda), in
+        cui sono salvate le sessioni Premium web</td>
+  </tr>
+  <tr>
+    <td>Resend (Stati Uniti)</td>
+    <td>Invio delle email con la chiave</td>
+  </tr>
+  <tr>
+    <td>PayPal (Europe) S.à r.l. et Cie, S.C.A. (Lussemburgo)</td>
+    <td>Pagamento, come titolare autonomo</td>
+  </tr>
+</table>
+<p>Alcuni di questi fornitori hanno sede negli Stati Uniti o usano
+infrastrutture distribuite in più paesi, quindi i dati possono essere
+trattati fuori dall'Unione europea. In questi casi il trasferimento si basa
+sulla decisione di adeguatezza della Commissione europea per le aziende
+aderenti all'EU-U.S. Data Privacy Framework (decisione di esecuzione (UE)
+2023/1795, art. 45 GDPR) oppure sulle clausole contrattuali tipo approvate
+dalla Commissione (art. 46 GDPR), secondo quanto indicato da ciascun
+fornitore nei propri documenti.</p>
+<p>Non vendiamo né cediamo i tuoi dati a nessuno.</p>
 
 <h2>8. I tuoi diritti</h2>
 <p>Il GDPR ti riconosce il diritto di accedere ai tuoi dati, correggerli,
 cancellarli, limitarne il trattamento, opporti e riceverli in un formato
 leggibile.</p>
-<p>Trattandosi di dati che stanno solo sul tuo dispositivo, <strong>li
-eserciti direttamente dall'app</strong>, senza dover scrivere a nessuno:</p>
+<p>Per i dati che stanno solo sul tuo dispositivo <strong>li eserciti
+direttamente dall'app</strong>, senza dover scrivere a nessuno:</p>
 <table>
   <tr><th>Diritto</th><th>Come</th></tr>
   <tr>
@@ -205,7 +418,17 @@ eserciti direttamente dall'app</strong>, senza dover scrivere a nessuno:</p>
     <td>Menu → <strong>Elimina tutti i miei dati</strong>. Immediata e
         definitiva. Oppure disinstalla l'app.</td>
   </tr>
+  <tr>
+    <td>Cancellazione dell'attivazione Premium dal server</td>
+    <td>Premium → <strong>Disattiva su questo telefono</strong>.</td>
+  </tr>
 </table>
+<p>Per i dati sul server (attivazioni, sessioni web, hash della
+promozione) e per l'<strong>opposizione</strong> ai trattamenti basati sul
+legittimo interesse (art. 21) scrivici all'indirizzo del punto 13. Poiché
+sul server delle licenze non teniamo la tua email, per trovare i dati che
+ti riguardano ti chiederemo la chiave di licenza. Se ti opponi ai controlli
+anti-abuso, non potremo più attivare Premium con quella chiave.</p>
 <p>Se ritieni che il trattamento violi il GDPR puoi rivolgerti al
 <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati
 personali</a> o all'autorità di controllo dello Stato in cui risiedi.</p>
@@ -216,6 +439,10 @@ sistema operativo isola dalle altre app installate. Sui dispositivi Android
 moderni con blocco schermo attivo, questa memoria è cifrata dal sistema.</p>
 <p>Ti consigliamo di tenere attivo il blocco schermo del telefono e di
 mantenere aggiornato il sistema operativo.</p>
+<p>Le comunicazioni con i nostri server avvengono in HTTPS. Sui server
+conserviamo, dove possibile, solo hash al posto dei dati originali. La
+chiave di licenza contiene la tua email in forma leggibile:
+<strong>non condividerla</strong> con altri.</p>
 <p><strong>Fai i tuoi backup.</strong> Poiché non conserviamo copie, se
 perdi o formatti il telefono i dati non sono recuperabili. Usa
 periodicamente la funzione di esportazione.</p>
@@ -234,6 +461,12 @@ sottoscritto. Il conteggio estintivo vincolante è esclusivamente quello
 rilasciato dal finanziatore: l'app serve a verificarlo, non a sostituirlo.</p>
 <p>Verifica sempre gli importi con il tuo istituto di credito o con un
 professionista prima di prendere decisioni.</p>
+<p>In particolare, il confronto <strong>«investi o estingui»</strong> usa
+classi di rendimento ipotetiche, non previsioni sui mercati: i rendimenti
+reali possono essere diversi, anche negativi. Il calcolo dei costi da
+recuperare per un <strong>prestito già estinto</strong> è una stima: se e
+quanto ti spetta dipende dal tuo contratto e dalle norme applicabili, e il
+risultato non è un parere legale.</p>
 
 <h2>12. Modifiche a questa informativa</h2>
 <p>Se cambieremo questa informativa in modo sostanziale, te lo mostreremo
@@ -242,11 +475,13 @@ al documento indica l'ultimo aggiornamento.</p>
 
 <h2>13. Contatti</h2>
 <p><a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a></p>
-<p>Rispondiamo entro 30 giorni, come previsto dall'art. 12 GDPR.</p>
+<p>Rispondiamo senza ingiustificato ritardo e al più tardi entro un mese,
+come previsto dall'art. 12 GDPR (il termine può essere prorogato di due mesi
+per richieste complesse; in quel caso te lo comunichiamo).</p>
 
 <footer>
   Estingui: prestiti e mutui — i tuoi debiti, calcolati bene.<br>
-  I dati restano sul tuo dispositivo.
+  I dati sui tuoi debiti restano sul tuo dispositivo.
 </footer>
 
 </body>
